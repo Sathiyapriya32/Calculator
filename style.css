@@ -1,0 +1,225 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+body
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(#1a144b,#d605a2);
+    overflow: hidden;
+}
+.bubbles{
+    position: absolute;
+    bottom: -100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.bubbles span{
+    height: 60px;
+    width: 60px;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    backdrop-filter: blur(5px);
+    animation: move 10s linear infinite;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes move{
+    100%{
+        transform: translateY(-90vh);
+    }
+}
+.bubbles span.one{
+    animation-delay: 2.2ss;
+    transform: scale(2.15);
+}
+.bubbles span.two{
+    animation-delay: 3.5s;
+    transform: scale(1.55);
+}
+.bubbles span.three{
+    animation-delay: 0.2s;
+    transform: scale(0.35);
+}
+.bubbles span.four{
+    animation-delay: 6s;
+    transform: scale(2.15);
+}
+.bubbles span.five{
+    animation-delay: 7s;
+    transform: scale(0.5);
+}
+.bubbles span.six{
+    animation-delay: 4s;
+    transform: scale(2.5);
+}
+.bubbles span.seven{
+    animation-delay: 3s;
+    transform: scale(1.5);
+}
+.bubbles span:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 40%;
+    transform: skew(45deg) translateX(150px);
+    background: rgba(255,255,255,0.15);   
+    animation: mirror 3s linear infinite; 
+}
+@keyframes mirror{
+    100%{
+        transform: translateX(-450px);
+    }
+}
+.bubbles span.one:before
+{
+    animation-delay: 1.5s;
+}
+.bubbles span.two:before
+{
+    animation-delay: 3.5s;
+}
+.bubbles span.three:before
+{
+    animation-delay: 2.5s;
+}
+.bubbles span.four:before
+{
+    animation-delay: 7.5s;
+}
+.bubbles span.five:before
+{
+    animation-delay: 4.5s;
+}
+.bubbles span.six:before
+{
+    animation-delay: 0.5s;
+}
+.bubbles span.seven:before
+{
+    animation-delay: 6s;
+}
+section
+{
+    box-shadow: 0 0 5px cyan,0 0 25px cyan;
+}
+section:hover
+{
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 100px cyan;
+}
+.calculator
+{
+    position: relative;
+    width: 340px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.521), -15px -15px 20px , #fffb;
+}
+.calculator .buttons
+{
+    position: relative;
+    display: grid;
+}
+.calculator .buttons #value
+{
+    position: relative;
+    grid-column: span 4;
+    user-select: none;
+    overflow: none;
+    width: 100%;
+    text-align: end;
+    color: #ffffff;
+    height: 100px;
+    line-height: 100px;
+    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 20px #fffb;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 0 20px;
+    font-size: 2em;
+    font-weight: 500;
+}
+.calculator .buttons span
+{
+    position: relative;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1),-5px -5px 20px #fff;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color:whitesmoke;
+    border: 2px solid #edf1f4;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px #fff;
+    border-radius: 10px;
+}
+.calculator .buttons span:active
+{
+    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px #fff;
+    color: #f44336;
+}
+.calculator .buttons span#clear
+{
+    grid-column: span 2;
+    background: #f44336;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+.calculator .buttons span#plus
+{
+    grid-row: span 2;
+    background: #31a935;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+.calculator .buttons span#equal
+{
+    grid-row: span 2;
+    background: #2196f3;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+.calculator .buttons span#divide
+{
+    grid-column: span 1;
+    background: #e99c69;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+.calculator .buttons span#multiply
+{
+    grid-column: span 1;
+    background: #e99c69;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+.calculator .buttons span#minus
+{
+    grid-column: span 1;
+    background: #e99c69;
+    color: white;
+    border: 2px solid #edf1f4;
+}
+.calculator .buttons span#clear:active,
+.calculator .buttons span#plus:active,
+.calculator .buttons span#equal:active,
+.calculator .buttons span#divide:active,
+.calculator .buttons span#multiply:active,
+.calculator .buttons span#minus:active
+{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1),-5px -5px 10px cyan, inset 5px 5px 10px rgba(0,0,0,0.1);
+
+}
